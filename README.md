@@ -1,3 +1,5 @@
+## [Testez notre application en cliquant ici ](https://assignementsmiage.onrender.com/)
+
 # Authentification Angular et Node.js avec JWT
 
 Dans le cadre du projet Assignments, nous avons mis en œuvre l'authentification des utilisateurs pour une application Angular en utilisant Node.js, Express et les JSON Web Tokens (JWT). Notre objectif était de garantir une communication sécurisée entre le client et le serveur, tout en offrant une expérience utilisateur fluide et sécurisée en utilisant des bibliothèques et des services spécifiques à Angular et en tirant parti des avantages de JWT pour l'authentification et l'autorisation.
