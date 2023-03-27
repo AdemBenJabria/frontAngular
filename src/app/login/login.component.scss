@@ -1,0 +1,121 @@
+$mat-blue: #2196f3;
+$mat-light-blue: #bbdefb;
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+
+  .login-section {
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s;
+
+    .login-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $mat-blue;
+      font-size: 24px;
+      margin-bottom: 15px;
+
+      mat-icon {
+        font-size: 32px;
+        margin-left: 8px;
+      }
+    }
+
+    .login-description {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .divider {
+      margin-bottom: 30px;
+    }
+    .mat-form-field-infix {
+        border-bottom: 0px;
+        border-top: 0px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 15px;
+        border : 0px;
+
+        mat-icon {
+          color: $mat-blue }
+        }
+      
+        .login-button {
+            margin-top: 25px;
+          align-self: center;
+          width: 50%;
+          text-transform: uppercase;
+          font-weight: bold;
+      
+          mat-icon {
+            margin-right: 8px;
+          }
+      
+          &:disabled {
+            background-color: rgba($mat-blue, 0.5);
+            color: #ffffff;
+          }
+        }
+      }
+      }
+      .mat-icon{
+        height: auto;
+        width: auto;
+      }
+      
+      .login-signup {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px 40px;
+      text-align: center;
+      
+      css
+      Copy code
+      .divider {
+        margin-bottom: 15px;
+      }
+      
+      .signup-link {
+        color: $mat-blue;
+        font-size: 16px;
+        text-decoration: none;
+      
+        span {
+          font-weight: bold;
+          text-decoration: underline;
+        }
+      
+        &:hover {
+          color: darken($mat-blue, 10%);
+        }
+      }
+      }
+      }
+      
+      @keyframes fadeIn {
+      0% {
+      opacity: 0;
+      transform: translateY(20px);
+      }
+      100% {
+      opacity: 1;
+      transform: translateY(0);
+      }
+      }

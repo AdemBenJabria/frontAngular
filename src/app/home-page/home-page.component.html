@@ -1,0 +1,30 @@
+<main class="home-page">
+    <div class="home-page-content">
+      <h1 class="home-page-title">
+        <span class="text-gradient">Assignements</span> App
+        <mat-icon class="title-icon">assignment</mat-icon>
+      </h1>
+      <h2 class="home-page-description">Que voulez-vous faire ?</h2>
+      <div class="home-page-buttons-container">
+        <ng-container *ngIf="!isLogin; else loggedIn">
+          <button routerLink="/login" class="button main-button" mat-stroked-button>
+            <mat-icon>login</mat-icon> Se connecter
+          </button>
+          <button routerLink="/signup" class="button secondary-button" mat-stroked-button>
+            <mat-icon>person_add</mat-icon> Sign-Up
+          </button>
+        </ng-container>
+        <ng-template #loggedIn>
+          <button routerLink="/assignements" class="button secondary-button" mat-stroked-button>
+            <mat-icon>list_alt</mat-icon> Consulter
+          </button>
+        </ng-template>
+      </div>
+      <div class="home-page-img">
+        <h2 class="home-page-description">
+          Notre plateforme de gestion de devoirs est l'endroit idéal pour planifier vos tâches et suivre vos progrès en temps réel. Testez dès maintenant !
+          <mat-icon class="description-icon">check_circle</mat-icon>
+        </h2>
+      </div>
+    </div>
+  </main>

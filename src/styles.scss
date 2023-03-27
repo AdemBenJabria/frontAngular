@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('assets/css/satoshi.css');
+@import './styles/index.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Satoshi-Black'; }
+
+h1 {
+    color: $headline-color;
+}
+p {
+    color: $paragraph-color;
+    font-family: 'Satoshi-Medium';
+}
+a {
+    color: $main-color;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:visited {
+    color: $tertiary-color;
+}
+
+.text-gradient {
+    background: $background-gradient;
+    background-clip: text;
+    color: transparent;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    .mat-form-field {
+        height: 48px;
+        width: 100%;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding: 0 0;
+        transition: border-color 0.2 ease;
+        margin-bottom: 1rem;
+    }
+
+    .mat-focused {
+        border: 1px solid black;
+    }
+}
+
+.button {
+    border-radius: 5px;
+    width: 188px;
+    height: 48px;
+    font-size: 16px;
+    transition-duration: .15s;
+}
+
+.main-button {
+    color: $button-text-color;
+    background-color: $main-color;
+    &:hover {
+        background-color: $background-color;
+        color: $headline-color;
+    }
+}
+
+.secondary-button {
+    color: $headline-color;
+    background-color: $background-color;
+    &:hover {
+        background: $background-gradient;
+        color: $background-color;
+    }
+}

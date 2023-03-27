@@ -1,0 +1,116 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$my-app-primary: mat-palette($mat-blue);
+$my-app-accent:  mat-palette($mat-amber);
+$my-app-warn:    mat-palette($mat-red);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.back-arrow {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+.details-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.assignement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.assignement-title {
+  margin: 0;
+  font-weight: bold;
+}
+
+.status-chip {
+  display: flex;
+  align-items: center;
+}
+
+.details-content {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.left-side,
+.right-side {
+  flex: 1;
+}
+
+.left-side {
+  margin-right: 2rem;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.more-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+
+  button {
+    margin-right: 1rem;
+  }
+}
+
+.right-side {
+  text-align: center;
+}
+
+.subject-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.subject-tags {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

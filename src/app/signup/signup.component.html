@@ -1,0 +1,63 @@
+<main>
+    <div class="main">
+        <h1>{{!isSuccesfull ? 'Rejoignez-nous' : 'Connexion réussi !'}}</h1>
+        <form *ngIf="!isSuccesfull" #signupForm="ngForm" class="form">
+            <mat-form-field>
+                <input 
+                    matInput 
+                    name="FirstName" 
+                    placeholder="Prénom" 
+                    required 
+                    [(ngModel)]="firstName">
+            </mat-form-field>
+            <mat-form-field class="form-group">
+                <input 
+                    matInput 
+                    name="LastName" 
+                    placeholder="Nom" 
+                    required 
+                    [(ngModel)]="lastName">
+            </mat-form-field>
+            <mat-form-field class="form-group">
+                <input
+                    type="email"
+                    matInput 
+                    name="Login" 
+                    placeholder="Adresse e-mail" 
+                    required
+                    [(ngModel)]="email">
+            </mat-form-field>
+            <mat-form-field class="form-group">
+                <input 
+                    matInput 
+                    name="Password" 
+                    placeholder="Mot de passe" 
+                    required 
+                    [(ngModel)]="password" 
+                    [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Cacher le mot de passe'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+    
+            <button 
+                [disabled]="!signupForm.valid" 
+                class="signup-button" 
+                mat-stroked-button
+                (click)="onSubmit();"
+            >
+                S'inscrire
+            </button>
+            <div 
+                class="alert alert-warning" 
+                *ngIf="signupForm.submitted && isSignUpFailed"
+            >
+                L'inscription a échoué !<br />{{ errorMessage }}
+              </div>
+        </form>
+        <div class="alert alert-success" *ngIf="isSuccesfull">
+            Votre inscription a réussi !
+            <a routerLink="/login">Cliquez ici pour vous connecter</a>
+        </div>
+    </div> 
+</main>

@@ -1,0 +1,48 @@
+@import '~@angular/material/theming';
+
+// Couleurs principales et secondaires
+$primary-color: mat-palette($mat-indigo);
+$accent-color: mat-palette($mat-pink);
+
+// Thème Angular Material
+$theme: mat-light-theme($primary-color, $accent-color);
+
+// Inclure le thème Angular Material
+@include angular-material-theme($theme);
+
+mat-toolbar {
+  background-color: mat-color($primary-color);
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+button {
+  display: flex;
+  align-items: center;
+}
+
+.home-icon,
+.connection-icon {
+  margin-left: 1rem;
+}
+
+span {
+  margin-left: 0.5rem;
+}
+
+.connection-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+div.connection-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -1,0 +1,67 @@
+  <div class="stepper-container">
+    <mat-horizontal-stepper linear #stepper (selectionChange)="onStepChange($event)">
+  <mat-step [stepControl]="firstFormGroup" errorMessage="Le nom est requis.">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Informations du devoir</ng-template>
+      <mat-form-field appearance="outline">
+        <mat-label>Intitulé du devoir</mat-label>
+        <input matInput formControlName="name" required>
+        <mat-icon matSuffix>edit</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Matière</mat-label>
+        <mat-select formControlName="subject" name="matiere">
+          <mat-option *ngFor="let matiere of subjectList" [value]="matiere.name">
+            {{matiere.name}}
+          </mat-option>
+        </mat-select>
+        <mat-icon matSuffix>school</mat-icon>
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-raised-button color="primary" matStepperNext class="animated-button">Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" errorMessage="La date est requise.">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Date de rendu</ng-template>
+      <mat-form-field appearance="outline">
+        <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="date"
+            required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-raised-button color="primary" matStepperPrevious class="animated-button">Retour</button>
+        <button mat-raised-button color="primary" matStepperNext class="animated-button">Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Récapitulatif</ng-template>
+    <div class="recap-container">
+      <div class="recap-title">
+        <h1>{{ firstFormGroup.value.name }}</h1>
+        <mat-icon>assignment</mat-icon>
+      </div>
+      <div class="recap-content">
+        <div class="recap-details">
+          <h2>Date de rendu</h2>
+          <p>{{secondFormGroup.value.date | date: 'MMM d, y'}}</p>
+          <mat-icon>event</mat-icon>
+          <h2>Statut</h2>
+          <p>Devoir non rendu</p>
+          <mat-icon>report_problem</mat-icon>
+        </div>
+        <div class="recap-buttons">
+          <button mat-raised-button color="primary" (click)="addAssignement()" class="animated-button">Ajouter</button>
+          <button mat-raised-button color="accent" (click)="stepper.reset()" class="animated-button">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+  </div>

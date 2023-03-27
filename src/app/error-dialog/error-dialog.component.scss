@@ -1,0 +1,50 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$my-theme-primary: mat-palette($mat-indigo);
+$my-theme-accent: mat-palette($mat-amber);
+$my-theme-warn: mat-palette($mat-red);
+$my-theme: mat-light-theme($my-theme-primary, $my-theme-accent, $my-theme-warn);
+
+@include angular-material-theme($my-theme);
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+  color: mat-color($my-theme-warn);
+  margin-bottom: 1rem;
+}
+
+.error-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+mat-dialog-content {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

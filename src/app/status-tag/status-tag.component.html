@@ -1,0 +1,14 @@
+<div *ngIf="assignement.rendu" class="status-label submitted">
+    <i class="indicator submitted"></i>
+    <p class="status-text small-spacing">Rendu !</p>
+</div>
+
+<div *ngIf="!assignement.rendu && !isLate" class="status-label not-submitted">
+    <i class="indicator not-submitted"></i>
+    <p class="status-text small-spacing">À rendre.</p>
+</div>
+
+<div *ngIf="!assignement.rendu && isLate" class="status-label overdue">
+    <i class="indicator overdue"></i>
+    <p class="status-text small-spacing">En retard !</p>
+</div>

@@ -1,0 +1,119 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-blue);
+$accent: mat-palette($mat-light-blue, A200, A100, A400);
+$warn: mat-palette($mat-red);
+$my-app-primary: mat-palette($mat-blue);
+$my-app-accent: mat-palette($mat-light-blue);
+$mat-blue: mat-color($my-app-primary);
+$mat-light-blue: mat-color($my-app-accent);
+
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: mat-color($primary, 50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.stepper-container {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.mat-focus-indicator {
+  margin: 10px;
+  min-height: 40px;
+  min-width: 100px;
+  max-height: 60px;
+
+}
+
+mat-horizontal-stepper {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-icon {
+  color: mat-color($my-app-primary);
+  margin-left: 4px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+mat-raised-button {
+  margin-right: 7px;
+}
+
+.recap-container {
+  padding: 20px;
+}
+
+.recap-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: mat-color($my-app-primary);
+  margin-bottom: 20px;
+}
+
+.recap-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.recap-details {
+  flex: 1;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.recap-details h2 {
+  color: mat-color($my-app-primary);
+  margin-bottom: 8px;
+}
+
+.recap-details p {
+  margin-bottom: 20px;
+}
+
+.recap-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+mat-raised-button[color="accent"] {
+  background-color: $mat-blue;
+  color: mat-color($my-app-primary, 800);
+  margin: 10px;
+}

@@ -1,0 +1,35 @@
+<main>
+    <div class="login-section">
+        <h1 class="login-title">Connexion à votre compte <mat-icon>account_circle</mat-icon></h1>
+        <p class="login-description">Connectez-vous avec votre Email et Mot de passe</p>
+        <mat-divider class="divider"></mat-divider>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email">
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">
+                    L'email est requis
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('email')">
+                    L'email doit être valide
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Mot de passe</mat-label>
+                <input type="password" matInput formControlName="password">
+                <mat-icon matSuffix>lock</mat-icon>
+                <mat-error *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">
+                    Le mot de passe est requis
+                </mat-error>
+            </mat-form-field>
+            <button [disabled]="!loginForm.valid" class="login-button" mat-raised-button color="primary">
+                <mat-icon>login</mat-icon> Se connecter
+            </button>
+        </form>
+    </div>
+    <div class="login-signup">
+        <mat-divider class="divider"></mat-divider>
+        <a routerLink="/signup" class="signup-link">Vous n'avez pas de compte ? <span>Inscrivez-vous</span></a>
+    </div>
+</main>

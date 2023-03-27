@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <button routerLink="/" mat-icon-button aria-label="home-button with menu icon">
+      <mat-icon>home</mat-icon>
+    </button>
+    <span>Assignements App</span>
+    <ng-container *ngIf="!isLogin; else loggedIn">
+      <button mat-icon-button aria-label="connection-button with face icon">
+        <mat-icon>face</mat-icon>
+        <span>Connexion</span>
+      </button>
+    </ng-container>
+    <ng-template #loggedIn>
+      <div mat-icon-button aria-label="user icon">
+        <mat-icon>face</mat-icon>
+      </div>
+    </ng-template>
+  </mat-toolbar>

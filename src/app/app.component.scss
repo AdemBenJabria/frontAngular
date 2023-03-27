@@ -1,0 +1,51 @@
+@import '~@angular/material/theming';
+
+$my-app-primary: mat-palette($mat-blue);
+$my-app-accent: mat-palette($mat-light-blue);
+$mat-blue: mat-color($my-app-primary);
+$mat-light-blue: mat-color($my-app-accent);
+
+mat-toolbar {
+  background-color: #221d3d;
+  color: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+  button {
+    color: #ffffff;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .home-icon {
+    margin-right: 8px;
+    color: #ffffff;
+
+    mat-icon {
+      margin-right: 0;
+      color: #ffffff;
+    }
+  }
+
+  .connection-icon {
+    margin-left: 20px;
+    display: flex;
+    align-items: right;
+    color: #ffffff;
+
+    span {
+      //padding-right: 200px;
+      color: #ffffff;
+    }
+
+    button {
+      padding: 12px;
+      color: $mat-blue;
+    }
+  }
+}
+
+app-sidenav {
+  height: 100%;
+}

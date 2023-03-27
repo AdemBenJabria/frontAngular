@@ -1,0 +1,48 @@
+<main class="container">
+    <mat-progress-spinner *ngIf="!loaded" diameter="40" [color]="'primary'"></mat-progress-spinner>
+    <button mat-icon-button routerLink="/assignements" class="back-arrow">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <section class="details-container" *ngIf="loaded">
+        <header class="assignement-header">
+            <h1 class="assignement-title">{{ assignement.nom }}</h1>
+            <mat-chip-list class="status-chip">
+                <mat-chip color="primary" selected="{{assignement.rendu}}">{{assignement.rendu ? 'Devoir rendu' : 'Devoir non rendu'}}</mat-chip>
+            </mat-chip-list>
+        </header>
+        <div class="details-content">
+            <div class="left-side">
+                <h2>Remarques</h2>
+                <p>{{ (assignement.remarque ? assignement.remarque : 'Aucune remarques') }}</p>
+                <h2>Détails du devoir</h2>
+                <div class="more-details">
+                    <div>
+                        <h3>Date de rendu</h3>
+                        <p>{{assignement.dateDeRendu | date: 'MMM d, y'}}</p>
+                    </div>
+                    <div>
+                        <h3>Note</h3>
+                        <p>{{assignement.note}}/20</p>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button mat-raised-button color="primary" (click)="onClickEdit()">
+                        <mat-icon>edit</mat-icon> Modifier
+                    </button>
+                    <button mat-raised-button color="warn" (click)="onDeleteButtonClick()">
+                        <mat-icon>delete</mat-icon> Supprimer
+                    </button>
+                    <mat-checkbox [checked]="assignement.rendu" class="main-checkbox" (change)="setRendu($event.checked)">Rendu</mat-checkbox>
+                </div>
+            </div>
+            <div class="right-side">
+                <img src="{{subject.image}}" class="subject-image"/>
+                <h2>Détails de la matière</h2>
+                <p>{{ (subject.description ? subject.description : 'Aucune description') }}</p>
+                <div class="subject-tags">
+                    <p>ECTS: {{subject.credits}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

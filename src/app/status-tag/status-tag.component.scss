@@ -1,0 +1,42 @@
+.status-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+  }
+  
+  .indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    margin-right: 0.25rem;
+  }
+  
+  .submitted {
+    background-color: #4caf50;
+    color: #ffffff;
+    .indicator {
+      background-color: #ffffff;
+    }
+  }
+  
+  .not-submitted {
+    background-color: #ff9800;
+    color: #ffffff;
+    .indicator {
+      background-color: #ffffff;
+    }
+  }
+  
+  .overdue {
+    background-color: #f44336;
+    color: #ffffff;
+    .indicator {
+      background-color: #ffffff;
+    }
+  }
+  
+  .small-spacing {
+    margin: 0;
+  }
